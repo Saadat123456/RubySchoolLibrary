@@ -1,5 +1,7 @@
+require 'nemeable'
+
 # Parent class for teacher and student
-class Person
+class Person < nemeable
   attr_reader :id
   attr_accessor :age, :name
 
@@ -19,4 +21,9 @@ class Person
   def can_use_services?
     of_age? || parent_permision
   end
+
+  def correct_name
+   @name
+  end
+
 end
