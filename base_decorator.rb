@@ -1,7 +1,7 @@
-require 'nemeable'
+require 'nameable'
 
 # Parent class for Trimmer and Capitalize decorators
-class Base < nemeable
+class Base < Nameable
   def initialize(nameable)
     @nameable = nameable
   end

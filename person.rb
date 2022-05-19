@@ -1,11 +1,12 @@
-require 'nemeable'
+require 'nameable'
 
 # Parent class for teacher and student
-class Person < nemeable
+class Person < Nameable
   attr_reader :id
   attr_accessor :age, :name
 
   def initialize(age, name = 'Unknown', parent_permision: true)
+    super()
     @id = Random.rand(1..100)
     @name = name
     @age = age
@@ -23,7 +24,7 @@ class Person < nemeable
   end
 
   def correct_name
-   @name
+    @name
   end
 
 end
