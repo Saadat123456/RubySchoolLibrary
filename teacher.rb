@@ -1,9 +1,9 @@
 require 'person'
 
+# Teacher class that extends from person
 class Teacher < person
-
   def initialize(age, specialization, name = 'Unknown', parent_permision: true)
-    super(age, name , parent_permision: parent_permision)
+    super(age, name, parent_permision: parent_permision)
     @specialization = specialization
   end
 
