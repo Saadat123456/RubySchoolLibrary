@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require 'base_decorator'
+require './base_decorator'
 
 # Trimmer decorator
 class TrimmerDecorator < Base
   def correct_name
-    @nameable.correct_name[0..10] unless @nameable.correct_name <= 10
+    @nameable.correct_name[0...10] unless @nameable.correct_name.length < 10
   end
 end

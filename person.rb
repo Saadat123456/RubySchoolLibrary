@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'nameable'
+require './nameable'
 
 # Parent class for teacher and student
 class Person < Nameable
@@ -15,17 +15,17 @@ class Person < Nameable
     _parent_permision = parent_permision
   end
 
-  private
-
-  def of_age?
-    age >= 18
-  end
-
   def can_use_services?
     of_age? || parent_permision
   end
 
   def correct_name
     @name
+  end
+
+  private
+
+  def of_age?
+    age >= 18
   end
 end

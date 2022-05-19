@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require 'nameable'
+require './nameable'
 
 # Parent class for Trimmer and Capitalize decorators
 class Base < Nameable
   def initialize(nameable)
-    super
+    super()
     @nameable = nameable
   end
 
