@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'nameable'
 
 # Parent class for teacher and student
@@ -26,5 +28,4 @@ class Person < Nameable
   def correct_name
     @name
   end
-
 end

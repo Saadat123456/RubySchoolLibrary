@@ -1,12 +1,10 @@
+# frozen_string_literal: true
+
 require 'base_decorator'
 
-# Parent class for Trimmer and Capitalize decorators
+# Trimmer decorator
 class TrimmerDecorator < Base
-  def initialize(nameable)
-    super(nameable)
-  end
-
   def correct_name
-    @nameable.correct_name.capitalize()
+    @nameable.correct_name[0..10] unless @nameable.correct_name <= 10
   end
 end
