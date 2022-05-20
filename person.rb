@@ -3,7 +3,7 @@ require './nameable'
 # Parent class for teacher and student
 class Person < Nameable
   attr_reader :id
-  attr_accessor :age, :name
+  attr_accessor :age, :name, :rentals
 
   def initialize(age, name = 'Unknown', parent_permision: true)
     super()
@@ -15,16 +15,11 @@ class Person < Nameable
   end
 
   def can_use_services?
-    of_age? || parent_permision
+    of_age? || _parent_permision
   end
 
   def correct_name
     @name
-  end
-
-  def add_rental(rental)
-    @rentals.push(rental)
-    rental.person = self
   end
 
   private
