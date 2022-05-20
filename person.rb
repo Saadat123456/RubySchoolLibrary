@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require './nameable'
 
 # Parent class for teacher and student
@@ -12,6 +10,7 @@ class Person < Nameable
     @id = Random.rand(1..100)
     @name = name
     @age = age
+    @rentals = []
     _parent_permision = parent_permision
   end
 
@@ -21,6 +20,11 @@ class Person < Nameable
 
   def correct_name
     @name
+  end
+
+  def add_rental(rental)
+    @rentals.push(rental)
+    rental.person = self
   end
 
   private
