@@ -1,5 +1,6 @@
-#Classroom class
+# frozen_string_literal: true
 
+# Classroom class
 class Classroom
   attr_accessor :label
 
@@ -12,6 +13,4 @@ class Classroom
     @students.push(student)
     student.classroom = self
   end
-
-
 end
