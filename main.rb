@@ -26,15 +26,9 @@ class Main
   def cases
     case @answer
     when 1
-      @app.all_books.each do |book|
-        puts("Title: #{book.title} Author: #{book.author}")
-      end
-      run
+      print_books
     when 2
-      @app.all_people.each do |person|
-        puts("[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}")
-      end
-      run
+      print_people
     when 3
       case3
     when 4
@@ -43,6 +37,18 @@ class Main
       case5
     when 6
       case6
+    end
+  end
+
+  def print_books
+    @app.all_books.each do |book|
+      puts("Title: #{book.title} Author: #{book.author}")
+    end
+  end
+
+  def print_people
+    @app.all_people.each do |person|
+      puts("[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}")
     end
   end
 
@@ -64,7 +70,6 @@ class Main
       @app.create_person(age, name, specialization: specialization)
     end
     puts("Person created succesfully\n")
-    run
   end
 
   def case4
@@ -74,7 +79,6 @@ class Main
     author = gets.chomp
     @app.create_a_book(title, author)
     puts('Book created succesfully')
-    run
   end
 
   def case5
@@ -92,7 +96,6 @@ class Main
     date = gets.chomp
     @app.create_a_rental(date, @app.books[book_index], @app.people[person_index])
     puts 'Rental created Succesfully'
-    run
   end
 
   def case6
