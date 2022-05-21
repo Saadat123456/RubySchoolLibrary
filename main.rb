@@ -19,27 +19,30 @@ class Main
         7 - Exit
       ")
       @answer = gets.chomp.to_i
+      cases
+    end
+  end
 
-      case @answer
-      when 1
-        @app.all_books.each do |book|
-          puts("Title: #{book.title} Author: #{book.author}")
-        end
-        run
-      when 2
-        @app.all_people.each do |person|
-          puts("[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}")
-        end
-        run
-      when 3
-        case3
-      when 4
-        case4
-      when 5
-        case5
-      when 6
-        case6
+  def cases
+    case @answer
+    when 1
+      @app.all_books.each do |book|
+        puts("Title: #{book.title} Author: #{book.author}")
       end
+      run
+    when 2
+      @app.all_people.each do |person|
+        puts("[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}")
+      end
+      run
+    when 3
+      case3
+    when 4
+      case4
+    when 5
+      case5
+    when 6
+      case6
     end
   end
 
